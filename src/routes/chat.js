@@ -36,31 +36,51 @@ chatRouter.post("/message", verifyFirebaseToken, async (req, res, next) => {
     const uid = req.user.uid;
     const chatId = req.body?.chat_id || crypto.randomUUID().replaceAll("-", "");
     const now = Date.now();
-    const scanHistory = await getScanHistory(uid);
+    let scanHistory = [];
+    try {
+      scanHistory = await getScanHistory(uid);
+    } catch (e) {
+      console.warn("Could not get scan history:", e.message);
+    }
 
-    await saveChatMessage(uid, chatId, {
+    const userMessage = {
+      id: crypto.randomUUID().replaceAll("-", ""),
       text: message,
       fromUser: true,
       timestamp: now
-    });
+    };
 
-    const aiReplyText = await generateChatResponse(message, scanHistory);
+    try {
+      await saveChatMessage(uid, chatId, userMessage);
+    } catch (e) {
+      console.warn("Could not save user message:", e.message);
+    }
+
+    let existingMessages = [];
+    try {
+      existingMessages = await getChatMessages(uid, chatId);
+    } catch (e) {
+      console.warn("Could not get chat history:", e.message);
+    }
+
+    const aiReplyText = await generateChatResponse(message, scanHistory, existingMessages);
     const replyTimestamp = Date.now();
-
-    await saveChatMessage(uid, chatId, {
+    const aiMessage = {
+      id: crypto.randomUUID().replaceAll("-", ""),
       text: aiReplyText,
       fromUser: false,
       timestamp: replyTimestamp
-    });
+    };
+
+    try {
+      await saveChatMessage(uid, chatId, aiMessage);
+    } catch (e) {
+      console.warn("Could not save AI message:", e.message);
+    }
 
     return res.json({
       chat_id: chatId,
-      reply: {
-        id: crypto.randomUUID().replaceAll("-", ""),
-        text: aiReplyText,
-        fromUser: false,
-        timestamp: replyTimestamp
-      }
+      reply: aiMessage
     });
   } catch (error) {
     return next(error);

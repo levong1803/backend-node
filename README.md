@@ -13,12 +13,16 @@ Node.js + Express version of the current Python backend.
 ## Routes
 
 - `GET /`
+- `GET /health/basic`
 - `GET /api/auth/me`
 - `POST /api/auth/profile`
 - `POST /api/scan/analyze`
 - `GET /api/scan/history`
 - `GET /api/scan/:scanId`
+- `DELETE /api/scan/:scanId`
 - `POST /api/chat/message`
+- `GET /api/chat/history`
+- `GET /api/chat/:chatId/messages`
 - `GET /api/products`
 - `GET /api/products/recommended`
 

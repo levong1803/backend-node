@@ -1,5 +1,5 @@
-import { GoogleGenAI } from "@google/genai";
-import { settings } from "../config.js";
+import { retrieveRelevantDocs } from "./ragService.js";
+import { withKeyRotation, MODELS } from "./geminiClient.js";
 
 const SYSTEM_PROMPT = `
 You are DermaScan AI Assistant, a friendly, professional skincare advisor.
@@ -14,20 +14,24 @@ Your capabilities:
 Rules:
 - Be concise (2-4 sentences unless the user asks for detail)
 - Use the user's scan data to personalize responses when available
+- Use the provided Skincare Knowledge Base to answer accurately
+- Cite specific information from the knowledge base when relevant
+- Combine knowledge base info with user's scan data for personalized advice
 - Always mention consulting a dermatologist for serious concerns
 - Respond in the same language as the user's message
 `;
 
-function getGeminiClient() {
-  if (!settings.geminiApiKey) {
-    return null;
-  }
-  return new GoogleGenAI({ apiKey: settings.geminiApiKey });
-}
-
-export async function generateChatResponse(userMessage, scanHistory = []) {
+export async function generateChatResponse(userMessage, scanHistory = [], chatHistory = []) {
   const latestScan = scanHistory[0];
   const contextParts = [SYSTEM_PROMPT];
+
+  const relevantDocs = await retrieveRelevantDocs(userMessage, 3);
+  if (relevantDocs.length > 0) {
+    const knowledgeContext = relevantDocs
+      .map((doc) => `[${doc.title}]: ${doc.content}`)
+      .join("\n\n");
+    contextParts.push(`\nSkincare Knowledge Base:\n${knowledgeContext}\n`);
+  }
 
   if (latestScan) {
     const conditions = (latestScan.conditions ?? [])
@@ -43,16 +47,26 @@ User's latest skin scan data:
 `);
   }
 
-  if (!settings.geminiApiKey) {
-    return "I can help with skincare guidance, but Gemini is not configured yet. Please set GEMINI_API_KEY and consult a dermatologist for medical concerns.";
+  if (chatHistory && chatHistory.length > 0) {
+    const historyText = chatHistory
+      .slice(-10) // Keep last 10 messages
+      .map(msg => `${msg.fromUser ? 'User' : 'Assistant'}: ${msg.text}`)
+      .join("\n");
+    contextParts.push(`\nRecent Conversation History:\n${historyText}\n`);
   }
 
-  const client = getGeminiClient();
   const prompt = `${contextParts.join("\n\n")}\n\nUser's message: ${userMessage}`;
-  const response = await client.models.generateContent({
-    model: "gemini-2.0-flash",
-    contents: prompt
-  });
 
-  return (response.text ?? "").trim();
+  try {
+    return await withKeyRotation(async (client) => {
+      const response = await client.models.generateContent({
+        model: MODELS.FLASH,
+        contents: prompt
+      });
+      return (response.text ?? "").trim();
+    });
+  } catch (error) {
+    console.error("Gemini API Error in Chat:", error.message);
+    return "Xin lỗi, hiện tại hệ thống AI đang quá tải hoặc hết lượt sử dụng (Quota Exceeded). Vui lòng thử lại sau hoặc cập nhật API Key mới!";
+  }
 }

@@ -1,0 +1,158 @@
+[
+  {
+    "id": "skin-type-oily",
+    "category": "skin_types",
+    "title": "Oily Skin",
+    "content": "Oily skin is characterized by excess sebum production, enlarged pores, a shiny appearance, and a tendency for acne and blackheads. Skincare routine should include: a gentle foaming or gel cleanser containing Salicylic Acid (BHA), an alcohol-free toner with Niacinamide to regulate sebum, and an oil-free, lightweight gel moisturizer. Sunscreen should be gel-based or matte finish. Avoid heavy creams, mineral oils, and over-washing, which can trigger more oil production."
+  },
+  {
+    "id": "skin-type-dry",
+    "category": "skin_types",
+    "title": "Dry Skin",
+    "content": "Dry skin lacks natural oils and moisture, leading to a tight, rough, flaky texture, and more visible fine lines. It is prone to irritation and redness. Skincare routine should focus on hydration: use a gentle cream or lotion cleanser (avoid foaming ones), apply a hydrating serum with Hyaluronic Acid or Glycerin on damp skin, and seal with a rich, thick moisturizer containing Ceramides, Shea Butter, or Squalane. Drink plenty of water (at least 2 liters a day) and consider using a humidifier."
+  },
+  {
+    "id": "skin-type-combination",
+    "category": "skin_types",
+    "title": "Combination Skin",
+    "content": "Combination skin has an oily T-zone (forehead, nose, chin) and normal to dry cheeks. It requires a balanced approach. Use a gentle gel cleanser. You may need to spot-treat: apply lightweight gel moisturizers on the T-zone and slightly richer creams on the cheeks. Niacinamide is excellent for balancing combination skin. Exfoliate 1-2 times a week, focusing on the oily areas."
+  },
+  {
+    "id": "skin-type-sensitive",
+    "category": "skin_types",
+    "title": "Sensitive Skin",
+    "content": "Sensitive skin reacts easily to environmental factors, harsh products, and fragrances, resulting in redness, itching, burning, and dryness. The key is a minimal routine: use fragrance-free, hypoallergenic products. Look for soothing ingredients like Centella Asiatica (Cica), Aloe Vera, Ceramides, and Colloidal Oatmeal. Always patch-test new products. Avoid harsh exfoliants, strong acids, alcohol, and synthetic fragrances."
+  },
+  {
+    "id": "condition-acne",
+    "category": "conditions",
+    "title": "Acne and Breakouts",
+    "content": "Acne occurs when hair follicles plug with oil and dead skin cells. Types include whiteheads, blackheads, papules, pustules, and cystic acne. Treatment involves: unclogging pores with Salicylic Acid (BHA), reducing bacteria with Benzoyl Peroxide, and increasing cell turnover with Retinoids/Adapalene. Avoid popping pimples to prevent scarring. Use non-comedogenic makeup and skincare. If acne is severe or cystic, consulting a dermatologist is highly recommended."
+  },
+  {
+    "id": "condition-dark-spots",
+    "category": "conditions",
+    "title": "Dark Spots and Hyperpigmentation",
+    "content": "Dark spots, post-inflammatory hyperpigmentation (PIH), or melasma are caused by excess melanin production due to sun exposure, hormonal changes, or acne inflammation. Treatment: Daily broad-spectrum SPF 30+ is mandatory. Incorporate brightening ingredients like Vitamin C, Niacinamide, Alpha Arbutin, Kojic Acid, or Tranexamic Acid. Exfoliation with AHAs (Glycolic or Lactic acid) helps fade surface pigmentation over time."
+  },
+  {
+    "id": "condition-fine-lines",
+    "category": "conditions",
+    "title": "Fine Lines and Wrinkles",
+    "content": "Fine lines and wrinkles are signs of skin aging, caused by collagen and elastin loss, sun damage, and repeated facial expressions. Treatment: Retinol or prescription Retinoids are the gold standard for stimulating collagen. Use Vitamin C for antioxidant protection and brightening. Keep the skin plump and hydrated with Hyaluronic Acid and Peptides. Daily sunscreen is the most effective preventative measure against premature aging."
+  },
+  {
+    "id": "condition-redness",
+    "category": "conditions",
+    "title": "Redness and Rosacea",
+    "content": "Facial redness can be caused by irritation, sensitivity, compromised skin barrier, or conditions like Rosacea. Management: Avoid known triggers like spicy foods, alcohol, extreme temperatures, and harsh skincare. Use soothing, anti-inflammatory ingredients like Azelaic Acid, Centella Asiatica, Green Tea extract, and Niacinamide. Focus on repairing the skin barrier with Ceramides. Always wear mineral sunscreen (Zinc Oxide or Titanium Dioxide), as chemical filters can sometimes sting."
+  },
+  {
+    "id": "condition-dryness-dehydration",
+    "category": "conditions",
+    "title": "Dryness and Dehydration",
+    "content": "Dry skin lacks oil, while dehydrated skin lacks water (even oily skin can be dehydrated). Symptoms include a dull, tight, or crepey appearance. Treatment for dehydration: layer humectants like Hyaluronic Acid, Glycerin, and Panthenol (B5) onto damp skin. Seal them in with an occlusive moisturizer. Avoid washing face with hot water and over-exfoliating, which strips the moisture barrier."
+  },
+  {
+    "id": "condition-large-pores",
+    "category": "conditions",
+    "title": "Large Pores",
+    "content": "Pore size is largely determined by genetics, but they can appear larger when clogged with sebum and dead skin, or due to loss of skin elasticity with age. Treatment: Keep pores clear using Salicylic Acid (BHA) and Niacinamide to regulate oil production. Retinol can help improve skin elasticity and texture, making pores appear smaller. Avoid heavy, pore-clogging (comedogenic) oils and waxes."
+  },
+  {
+    "id": "ingredient-retinol",
+    "category": "ingredients",
+    "title": "Retinol (Vitamin A)",
+    "content": "Retinol is a powerhouse anti-aging ingredient that speeds up cell turnover, boosts collagen production, and helps clear acne. It reduces fine lines, wrinkles, and dark spots. Usage: Apply only at night, starting 1-2 times a week to build tolerance. It can cause dryness, peeling, and sun sensitivity initially. Always wear sunscreen during the day. Do not use during pregnancy."
+  },
+  {
+    "id": "ingredient-niacinamide",
+    "category": "ingredients",
+    "title": "Niacinamide (Vitamin B3)",
+    "content": "Niacinamide is a versatile, gentle ingredient suitable for almost all skin types. It helps build keratin, strengthens the lipid barrier, minimizes redness and blotchiness, regulates oil production, protects against sun damage, treats hyperpigmentation, and minimizes pore appearance. It can be used morning and night."
+  },
+  {
+    "id": "ingredient-salicylic-acid",
+    "category": "ingredients",
+    "title": "Salicylic Acid (BHA)",
+    "content": "Salicylic acid is a Beta Hydroxy Acid (BHA). It is oil-soluble, meaning it can penetrate deep into the pores to dissolve sebum and dead skin cells. It is highly effective for treating blackheads, whiteheads, and oily skin. It also has anti-inflammatory properties. Typical concentration is 1% to 2%. Can be drying, so follow with a moisturizer."
+  },
+  {
+    "id": "ingredient-hyaluronic-acid",
+    "category": "ingredients",
+    "title": "Hyaluronic Acid",
+    "content": "Hyaluronic Acid is a humectant that can hold up to 1000 times its weight in water. It draws moisture from the environment into the skin, keeping it hydrated, plump, and bouncy. Best applied to slightly damp skin and followed by a moisturizer to lock the hydration in. Suitable for all skin types."
+  },
+  {
+    "id": "ingredient-vitamin-c",
+    "category": "ingredients",
+    "title": "Vitamin C (L-Ascorbic Acid)",
+    "content": "Vitamin C is a potent antioxidant that neutralizes free radicals from UV and pollution. It brightens the complexion, fades hyperpigmentation, and boosts collagen synthesis. Best used in the morning under sunscreen to enhance UV protection. It can degrade quickly in light and air, so look for stabilized forms or dark packaging."
+  },
+  {
+    "id": "ingredient-aha",
+    "category": "ingredients",
+    "title": "Alpha Hydroxy Acids (AHAs)",
+    "content": "AHAs (like Glycolic Acid, Lactic Acid, Mandelic Acid) are water-soluble chemical exfoliants that work on the skin's surface. They melt the 'glue' holding dead skin cells together, revealing brighter, smoother skin beneath. Excellent for dullness, uneven texture, and surface pigmentation. Increases sun sensitivity, so daily sunscreen is non-negotiable."
+  },
+  {
+    "id": "ingredient-centella",
+    "category": "ingredients",
+    "title": "Centella Asiatica (Cica)",
+    "content": "Centella Asiatica, also known as Gotu Kola or Tiger Grass, is a botanical extract famous for its healing, soothing, and anti-inflammatory properties. It is rich in amino acids, beta carotene, and fatty acids. It is highly recommended for sensitive skin, compromised barriers, redness, and wound healing (like post-acne marks)."
+  },
+  {
+    "id": "routine-morning",
+    "category": "routines",
+    "title": "Basic Morning Routine",
+    "content": "A morning routine focuses on protection. Steps: 1. Cleanser (Optional for dry skin, just splash with water; essential for oily skin). 2. Toner/Essence (Optional, for hydration). 3. Antioxidant Serum (e.g., Vitamin C to protect against free radicals). 4. Moisturizer (Lightweight, to seal in hydration). 5. Sunscreen (Broad-spectrum SPF 30+, the most critical step, apply generously as the last step)."
+  },
+  {
+    "id": "routine-evening",
+    "category": "routines",
+    "title": "Basic Evening Routine",
+    "content": "An evening routine focuses on cleansing and repair. Steps: 1. Double Cleanse (Oil cleanser or micellar water to remove makeup/SPF, followed by a water-based cleanser). 2. Exfoliant or Treatment (e.g., BHA for breakouts, AHA for texture, or Retinol for anti-aging. Don't use all at once to avoid irritation). 3. Hydrating Serum (e.g., Hyaluronic Acid). 4. Moisturizer (Slightly richer than the morning one to support skin repair overnight)."
+  },
+  {
+    "id": "routine-weekly",
+    "category": "routines",
+    "title": "Weekly Skincare Extras",
+    "content": "Weekly additions can target specific concerns without overwhelming the skin. Exfoliation: 1-2 times a week using a chemical exfoliant (AHA/BHA) to remove dead skin cells. Masks: Clay masks 1-2 times a week for oily/acne-prone skin to absorb excess oil; Hydrating sheet masks or sleeping masks for dry/dehydrated skin. Never over-exfoliate, as it can damage the skin barrier."
+  },
+  {
+    "id": "diet-good-foods",
+    "category": "diet",
+    "title": "Foods for Healthy Skin",
+    "content": "Diet plays a crucial role in skin health. Omega-3 fatty acids (found in salmon, walnuts, chia seeds) reduce inflammation and keep skin moisturized. Vitamin C-rich foods (citrus fruits, bell peppers, strawberries) are essential for collagen production. Vitamin E (almonds, avocados, sunflower seeds) acts as an antioxidant protecting against cell damage. Zinc (oysters, pumpkin seeds, lentils) is important for skin healing and reducing acne inflammation."
+  },
+  {
+    "id": "diet-bad-foods",
+    "category": "diet",
+    "title": "Foods That May Trigger Skin Issues",
+    "content": "Certain foods can trigger or worsen skin conditions like acne and premature aging. High glycemic index (GI) foods (sugary drinks, white bread, pastries) cause insulin spikes, leading to increased sebum production and acne. Dairy, especially skim milk, has been linked to acne breakouts in some individuals due to hormonal triggers. Advanced Glycation End products (AGEs), formed when cooking meat at high temperatures or eating high-sugar diets, can damage collagen and accelerate aging."
+  },
+  {
+    "id": "lifestyle-hydration",
+    "category": "lifestyle",
+    "title": "Water and Skin Hydration",
+    "content": "Drinking adequate water is essential for overall health, including skin health. It helps flush out toxins and maintain the skin's elasticity. While drinking water alone won't cure dry skin (which needs topical moisturizers to trap water), severe dehydration will make skin look dull, tight, and accentuate fine lines. Aim for at least 8 glasses (2 liters) of water daily, adjusting for activity level and climate."
+  },
+  {
+    "id": "lifestyle-sleep",
+    "category": "lifestyle",
+    "title": "Sleep and Skin Repair",
+    "content": "'Beauty sleep' is real. During deep sleep, the body goes into repair mode. Blood flow to the skin increases, and the body produces collagen. Lack of sleep leads to elevated cortisol (stress hormone) levels, which can trigger acne, inflammation, and exacerbate conditions like eczema or psoriasis. It also causes poor water balance, leading to puffy eyes and dark circles. Aim for 7-9 hours of quality sleep per night."
+  },
+  {
+    "id": "lifestyle-stress",
+    "category": "lifestyle",
+    "title": "Stress Management",
+    "content": "Chronic stress takes a toll on the skin. It causes the body to release cortisol and other hormones, which tell the sebaceous glands to produce more oil, making you more prone to acne. Stress can also trigger or worsen psoriasis, rosacea, and eczema flare-ups, and impair the skin's barrier function, making it slower to heal. Managing stress through exercise, meditation, yoga, or hobbies is a vital part of skincare."
+  },
+  {
+    "id": "lifestyle-sun-protection",
+    "category": "lifestyle",
+    "title": "Sun Protection",
+    "content": "UV radiation from the sun is the number one cause of premature skin aging (photoaging), including wrinkles, loss of elasticity, and hyperpigmentation, as well as skin cancer. UVA rays age the skin, while UVB rays burn it. Daily use of broad-spectrum sunscreen (SPF 30 or higher) is essential, rain or shine, indoors or outdoors. Reapply every 2 hours if outdoors, and wear protective clothing and hats."
+  }
+]

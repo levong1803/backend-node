@@ -1,6 +1,6 @@
 import cors from "cors";
 import express from "express";
-import { getConfigStatus } from "./config.js";
+import { getConfigStatus, settings } from "./config.js";
 import { getFirebaseStatus } from "./firebase/client.js";
 import { authRouter } from "./routes/auth.js";
 import { chatRouter } from "./routes/chat.js";
@@ -45,7 +45,9 @@ app.use((error, _req, res, _next) => {
     return res.status(400).json({ detail: "Anh qua lon (toi da 10MB)" });
   }
 
+  console.error("Unhandled API error:", error);
+
   return res.status(500).json({
-    detail: error?.message || "Internal server error"
+    detail: settings.debug ? error?.message || "Internal server error" : "Internal server error"
   });
 });

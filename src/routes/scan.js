@@ -1,7 +1,7 @@
 import express from "express";
 import multer from "multer";
 import { verifyFirebaseToken } from "../middleware/auth.js";
-import { getScanById, getScanHistory, saveScan } from "../firebase/firestore.js";
+import { getScanById, getScanHistory, saveScan, deleteScan } from "../firebase/firestore.js";
 import { uploadImageIfConfigured } from "../firebase/storage.js";
 import { analyzeSkinImage } from "../services/skinAnalyzer.js";
 
@@ -34,12 +34,25 @@ scanRouter.post("/analyze", verifyFirebaseToken, upload.single("file"), async (r
       imageUrl,
       type: "Facial Skin Analysis",
       score: analysis.score,
+      skinAge: analysis.skinAge ?? null,
+      skinType: analysis.skinType ?? null,
+      isFallback: analysis.isFallback === true,
+      fallbackReason: analysis.fallbackReason ?? null,
+      detailedMetrics: analysis.detailedMetrics ?? null,
       conditions: analysis.conditions ?? [],
       recommendations: analysis.recommendations ?? []
     };
 
-    const scanId = await saveScan(uid, scanData);
-    return res.json({ ...scanData, id: scanId });
+    try {
+      const scanId = await saveScan(uid, scanData);
+      return res.json({ ...scanData, id: scanId });
+    } catch (dbError) {
+      console.error("Firestore saveScan failed:", dbError.message);
+      return res.status(503).json({
+        detail: "Khong the luu ket qua scan. Vui long thu lai sau.",
+        code: "SCAN_SAVE_FAILED"
+      });
+    }
   } catch (error) {
     return next(error);
   }
@@ -63,6 +76,19 @@ scanRouter.get("/:scanId", verifyFirebaseToken, async (req, res, next) => {
     }
 
     return res.json(scan);
+  } catch (error) {
+    return next(error);
+  }
+});
+
+scanRouter.delete("/:scanId", verifyFirebaseToken, async (req, res, next) => {
+  try {
+    const scan = await getScanById(req.user.uid, req.params.scanId);
+    if (!scan) {
+      return res.status(404).json({ detail: "Scan khong ton tai" });
+    }
+    await deleteScan(req.user.uid, req.params.scanId);
+    return res.json({ success: true });
   } catch (error) {
     return next(error);
   }
